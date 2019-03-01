@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  millionaire
 //
 //  Created by Igor Chernyshov on 01/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

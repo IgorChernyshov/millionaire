@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPN-Ng-Q1Y" userLabel="Question View" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                <rect key="frame" x="16" y="15" width="635" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-Be-bVK">
+                                        <rect key="frame" x="30" y="15" width="575" height="70"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cmb-Be-bVK" firstAttribute="leading" secondItem="RPN-Ng-Q1Y" secondAttribute="leading" constant="30" id="5GJ-hA-eCi"/>
+                                    <constraint firstAttribute="bottom" secondItem="cmb-Be-bVK" secondAttribute="bottom" constant="15" id="LWT-UY-qTt"/>
+                                    <constraint firstAttribute="height" constant="100" id="MnV-LL-kJh"/>
+                                    <constraint firstItem="cmb-Be-bVK" firstAttribute="top" secondItem="RPN-Ng-Q1Y" secondAttribute="top" constant="15" id="cDZ-XK-ypm"/>
+                                    <constraint firstItem="cmb-Be-bVK" firstAttribute="centerX" secondItem="RPN-Ng-Q1Y" secondAttribute="centerX" id="r7s-lO-qgZ"/>
+                                    <constraint firstItem="cmb-Be-bVK" firstAttribute="centerY" secondItem="RPN-Ng-Q1Y" secondAttribute="centerY" id="ra1-V1-K1Z"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cmb-Be-bVK" secondAttribute="trailing" constant="30" id="wmG-TS-zIQ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-No-Q5v" userLabel="Answers Stack">
+                                <rect key="frame" x="16" y="125" width="635" height="180"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-hP-LAZ" userLabel="Answers A and B Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="635" height="86.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-GM-x3s" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="86.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-uZ-1Kc">
+                                                        <rect key="frame" x="15" y="15" width="272" height="56.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Answer A">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="hf8-uZ-1Kc" firstAttribute="centerX" secondItem="JC4-GM-x3s" secondAttribute="centerX" id="5cp-9A-P7f"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hf8-uZ-1Kc" secondAttribute="bottom" constant="15" id="HKv-K1-W9Z"/>
+                                                    <constraint firstItem="hf8-uZ-1Kc" firstAttribute="centerY" secondItem="JC4-GM-x3s" secondAttribute="centerY" id="LBO-Se-rEn"/>
+                                                    <constraint firstItem="hf8-uZ-1Kc" firstAttribute="top" secondItem="JC4-GM-x3s" secondAttribute="top" constant="15" id="hNe-9S-IwU"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hf8-uZ-1Kc" secondAttribute="trailing" constant="15" id="mpk-Eu-SBf"/>
+                                                    <constraint firstItem="hf8-uZ-1Kc" firstAttribute="leading" secondItem="JC4-GM-x3s" secondAttribute="leading" constant="15" id="t9n-cd-0at"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5My-IO-wqw" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="333" y="0.0" width="302" height="86.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-fS-lxT">
+                                                        <rect key="frame" x="15" y="15" width="272" height="56.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Answer B">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eEd-fS-lxT" secondAttribute="trailing" constant="15" id="AiG-yl-cKF"/>
+                                                    <constraint firstItem="eEd-fS-lxT" firstAttribute="centerX" secondItem="5My-IO-wqw" secondAttribute="centerX" id="g9g-US-mFa"/>
+                                                    <constraint firstItem="eEd-fS-lxT" firstAttribute="centerY" secondItem="5My-IO-wqw" secondAttribute="centerY" id="hf3-b3-iay"/>
+                                                    <constraint firstItem="eEd-fS-lxT" firstAttribute="top" secondItem="5My-IO-wqw" secondAttribute="top" constant="15" id="lEV-jI-jJy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eEd-fS-lxT" secondAttribute="bottom" constant="15" id="wkU-Za-yMf"/>
+                                                    <constraint firstItem="eEd-fS-lxT" firstAttribute="leading" secondItem="5My-IO-wqw" secondAttribute="leading" constant="15" id="z4N-Mh-8z3"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ms-7vQ" userLabel="Answers C and D Stack">
+                                        <rect key="frame" x="0.0" y="93.5" width="635" height="86.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-yF-O3T" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="86.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-TL-6uO">
+                                                        <rect key="frame" x="15" y="15" width="272" height="56.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Answer C">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hGn-TL-6uO" secondAttribute="trailing" constant="15" id="AS4-Mj-vRr"/>
+                                                    <constraint firstItem="hGn-TL-6uO" firstAttribute="centerX" secondItem="ggG-yF-O3T" secondAttribute="centerX" id="L6R-2y-46Y"/>
+                                                    <constraint firstItem="hGn-TL-6uO" firstAttribute="leading" secondItem="ggG-yF-O3T" secondAttribute="leading" constant="15" id="TtF-wN-Bkk"/>
+                                                    <constraint firstItem="hGn-TL-6uO" firstAttribute="top" secondItem="ggG-yF-O3T" secondAttribute="top" constant="15" id="W6u-XA-0lH"/>
+                                                    <constraint firstItem="hGn-TL-6uO" firstAttribute="centerY" secondItem="ggG-yF-O3T" secondAttribute="centerY" id="ZLU-uB-s45"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hGn-TL-6uO" secondAttribute="bottom" constant="15" id="sgy-90-GkK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlY-8G-hZV" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="333" y="0.0" width="302" height="86.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-a1-NCe">
+                                                        <rect key="frame" x="15" y="15" width="272" height="56.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Answer D">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="2oJ-a1-NCe" firstAttribute="centerX" secondItem="xlY-8G-hZV" secondAttribute="centerX" id="LLc-fn-EKJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2oJ-a1-NCe" secondAttribute="bottom" constant="15" id="fx5-Kt-fnq"/>
+                                                    <constraint firstItem="2oJ-a1-NCe" firstAttribute="centerY" secondItem="xlY-8G-hZV" secondAttribute="centerY" id="g1y-c8-yE4"/>
+                                                    <constraint firstItem="2oJ-a1-NCe" firstAttribute="top" secondItem="xlY-8G-hZV" secondAttribute="top" constant="15" id="glE-3Z-pnh"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2oJ-a1-NCe" secondAttribute="trailing" constant="15" id="lCU-H4-BEq"/>
+                                                    <constraint firstItem="2oJ-a1-NCe" firstAttribute="leading" secondItem="xlY-8G-hZV" secondAttribute="leading" constant="15" id="oVR-1k-beI"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="kdb-3n-pXd" userLabel="Hints Stack">
+                                <rect key="frame" x="15" y="315" width="637" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-gK-B5p" customClass="LightBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUd-e3-aQT">
+                                                <rect key="frame" x="49" y="9" width="77" height="42"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                <state key="normal" title="50 : 50">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="bUd-e3-aQT" firstAttribute="centerY" secondItem="AXc-gK-B5p" secondAttribute="centerY" id="K8R-d1-Yng"/>
+                                            <constraint firstItem="bUd-e3-aQT" firstAttribute="centerX" secondItem="AXc-gK-B5p" secondAttribute="centerX" id="lvI-hN-E2d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dny-xj-DUX" customClass="LightBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="231" y="0.0" width="175" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksc-LK-18m">
+                                                <rect key="frame" x="65" y="0.0" width="45" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="📞"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ksc-LK-18m" firstAttribute="centerY" secondItem="dny-xj-DUX" secondAttribute="centerY" id="OyG-8J-tRl"/>
+                                            <constraint firstItem="ksc-LK-18m" firstAttribute="centerX" secondItem="dny-xj-DUX" secondAttribute="centerX" id="ocn-ZC-WCq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9q-Tr-t5V" customClass="LightBlueGradientView" customModule="millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="462" y="0.0" width="175" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayT-DD-v7t">
+                                                <rect key="frame" x="65" y="0.0" width="45" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="👨‍👩‍👧‍👦"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ayT-DD-v7t" firstAttribute="centerY" secondItem="z9q-Tr-t5V" secondAttribute="centerY" id="JnC-iB-N6U"/>
+                                            <constraint firstItem="ayT-DD-v7t" firstAttribute="centerX" secondItem="z9q-Tr-t5V" secondAttribute="centerX" id="xmr-6h-z0o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wbq-No-Q5v" firstAttribute="top" secondItem="RPN-Ng-Q1Y" secondAttribute="bottom" constant="10" id="FuM-fa-FPV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbq-No-Q5v" secondAttribute="trailing" constant="16" id="SlA-gL-5ke"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RPN-Ng-Q1Y" secondAttribute="trailing" constant="16" id="ZQW-tB-Odu"/>
+                            <constraint firstItem="kdb-3n-pXd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bLq-bn-IfP"/>
+                            <constraint firstItem="RPN-Ng-Q1Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eyP-0v-Otj"/>
+                            <constraint firstItem="wbq-No-Q5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l3D-JS-yem"/>
+                            <constraint firstItem="kdb-3n-pXd" firstAttribute="top" secondItem="wbq-No-Q5v" secondAttribute="bottom" constant="10" id="oue-pG-hQF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdb-3n-pXd" secondAttribute="trailing" constant="15" id="qmp-Pu-bSB"/>
+                            <constraint firstItem="RPN-Ng-Q1Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="s3i-Y7-82B"/>
+                            <constraint firstItem="kdb-3n-pXd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="uiZ-zk-aeY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.523238380809602" y="26.399999999999999"/>
+        </scene>
+    </scenes>
+</document>
