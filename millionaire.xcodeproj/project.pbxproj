@@ -16,6 +16,7 @@
 		9C4C3487222A491F009BB9E1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C3486222A491F009BB9E1 /* Game.swift */; };
 		9C4C3489222A4B86009BB9E1 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C3488222A4B86009BB9E1 /* GameSession.swift */; };
 		9C4C348B222A5A3D009BB9E1 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C348A222A5A3D009BB9E1 /* GameResult.swift */; };
+		9C4C348F222A6D50009BB9E1 /* ResultsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C348E222A6D50009BB9E1 /* ResultsCaretaker.swift */; };
 		9CC1AF962229095C001B8DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1AF952229095C001B8DA9 /* AppDelegate.swift */; };
 		9CC1AF982229095C001B8DA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1AF972229095C001B8DA9 /* GameViewController.swift */; };
 		9CC1AF9B2229095C001B8DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC1AF992229095C001B8DA9 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		9C4C3486222A491F009BB9E1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9C4C3488222A4B86009BB9E1 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		9C4C348A222A5A3D009BB9E1 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		9C4C348E222A6D50009BB9E1 /* ResultsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCaretaker.swift; sourceTree = "<group>"; };
 		9CC1AF922229095C001B8DA9 /* millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = millionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC1AF952229095C001B8DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CC1AF972229095C001B8DA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		9C4C346D22293737009BB9E1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9C4C348D222A6D3B009BB9E1 /* Caretakers */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -161,6 +164,14 @@
 				9C4C3488222A4B86009BB9E1 /* GameSession.swift */,
 			);
 			path = GameControl;
+			sourceTree = "<group>";
+		};
+		9C4C348D222A6D3B009BB9E1 /* Caretakers */ = {
+			isa = PBXGroup;
+			children = (
+				9C4C348E222A6D50009BB9E1 /* ResultsCaretaker.swift */,
+			);
+			path = Caretakers;
 			sourceTree = "<group>";
 		};
 		9CC1AF892229095C001B8DA9 = {
@@ -271,6 +282,7 @@
 				9CC1AFB722291989001B8DA9 /* DarkBlueGradientView.swift in Sources */,
 				9C4C348422295C67009BB9E1 /* Questions.swift in Sources */,
 				9CC1AF962229095C001B8DA9 /* AppDelegate.swift in Sources */,
+				9C4C348F222A6D50009BB9E1 /* ResultsCaretaker.swift in Sources */,
 				9C4C346B22292C74009BB9E1 /* LightBlueGradientView.swift in Sources */,
 				9C4C348B222A5A3D009BB9E1 /* GameResult.swift in Sources */,
 			);

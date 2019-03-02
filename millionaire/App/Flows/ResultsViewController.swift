@@ -48,7 +48,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "highestScoresCell", for: indexPath)
     let result = Game.instance.gameResults[indexPath.row]
     cell.textLabel?.text = ResultsViewController.dateFormatter.string(from: result.date)
-    cell.detailTextLabel?.text = "Решено \(result.percentOfQuestionsSolved)% вопросов"
+    cell.detailTextLabel?.text = "Игра пройдена на \(result.percentOfQuestionsSolved)%"
     return cell
   }
   

@@ -16,11 +16,20 @@ final class Game: GameSessionDelegate {
       gameSession?.sessionDelegate = self
     }
   }
-  var gameResults: [GameResult] = []
+  
+  private(set) var gameResults: [GameResult] {
+    didSet {
+      try? resultsCaretaker.saveResults(gameResults)
+    }
+  }
+  
+  private let resultsCaretaker = ResultsCaretaker()
   
   // MARK: - Singleton initialization
   static let instance = Game()
-  private init() {}
+  private init() {
+    gameResults = (try? resultsCaretaker.loadResults()) ?? []
+  }
   
   // MARK: - Methods
   
