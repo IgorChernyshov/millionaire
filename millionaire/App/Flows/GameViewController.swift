@@ -104,7 +104,7 @@ final class GameViewController: UIViewController {
   @IBAction func answerButtonWasPressed(_ sender: UIButton) {
     guard let currentQuestion = questions.first else { return }
     
-    if sender.tag == currentQuestion.correctAnswerNumber {
+    if sender.tag == currentQuestion.correctAnswerNumber + 1 {
       gameDelegate?.answeredCorrect()
       questions.removeFirst()
       
@@ -151,14 +151,15 @@ final class GameViewController: UIViewController {
   }
   
   private func provideCallFriendHint() {
+    // TODO: Fix that it can show answers that are disabled by 50/50
     guard let currentQuestion = questions.first else { return }
     
     let randomBetweenOneAndHundred = Int.random(in: 1...100)
     if randomBetweenOneAndHundred <= 75 {
-      let correctButton = view.viewWithTag(currentQuestion.correctAnswerNumber) as? UIButton
+      let correctButton = view.viewWithTag(currentQuestion.correctAnswerNumber + 1) as? UIButton
       correctButton?.setTitleColor(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), for: .normal)
     } else {
-      let randomButtonNumber = Int.random(in: 0...3)
+      let randomButtonNumber = Int.random(in: 1...4)
       let randomButton = view.viewWithTag(randomButtonNumber) as? UIButton
       randomButton?.setTitleColor(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), for: .normal)
     }
@@ -168,9 +169,34 @@ final class GameViewController: UIViewController {
   }
   
   @IBAction func audienceHelpButtonWasPressed(_ sender: Any) {
+    provideAudienceHelpHint()
+    
+    gameDelegate?.used(hint: "audienceHelp")
+  }
+  
+  private func provideAudienceHelpHint() {
+    // TODO: Fix that it can show answers that are disabled by 50/50
+    guard let currentQuestion = questions.first else { return }
+    
+    var availableVotes = 70
+    var votesForAnswers = [0, 0, 0, 0]
+    
+    for index in 1...3 {
+      votesForAnswers[index - 1] += Int.random(in: 0...availableVotes)
+      availableVotes -= votesForAnswers[index - 1]
+    }
+    votesForAnswers[3] += availableVotes
+    votesForAnswers[currentQuestion.correctAnswerNumber] += 30
+    
+    for index in 1...4 {
+      let numberOfVotes = votesForAnswers[index - 1]
+      let button = view.viewWithTag(index) as? UIButton
+      var buttonTitle = button?.title(for: .normal)
+      buttonTitle = "\(buttonTitle ?? "") - \(numberOfVotes)%"
+      button?.setTitle(buttonTitle, for: .normal)
+    }
     
     hintButtonAudienceHelp.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
     hintButtonAudienceHelp.isEnabled = false
-    gameDelegate?.used(hint: "audienceHelp")
   }
 }

@@ -48,7 +48,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-GM-x3s" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="307.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-uZ-1Kc">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-uZ-1Kc">
                                                         <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer A">
@@ -72,7 +72,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5My-IO-wqw" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
                                                 <rect key="frame" x="327.5" y="0.0" width="307.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-fS-lxT">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-fS-lxT">
                                                         <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer B">
@@ -101,7 +101,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-yF-O3T" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="307.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-TL-6uO">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-TL-6uO">
                                                         <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer C">
@@ -125,7 +125,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlY-8G-hZV" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
                                                 <rect key="frame" x="327.5" y="0.0" width="307.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-a1-NCe">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-a1-NCe">
                                                         <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer D">
