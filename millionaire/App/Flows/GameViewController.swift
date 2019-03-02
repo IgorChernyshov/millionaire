@@ -145,14 +145,26 @@ final class GameViewController: UIViewController {
   }
   
   @IBAction func callFriendButtonWasPressed(_ sender: Any) {
+    provideCallFriendHint()
     
-    hintButtonCallFriend.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
-    hintButtonCallFriend.isEnabled = false
     gameDelegate?.used(hint: "callFriend")
   }
   
   private func provideCallFriendHint() {
+    guard let currentQuestion = questions.first else { return }
     
+    let randomBetweenOneAndHundred = Int.random(in: 1...100)
+    if randomBetweenOneAndHundred <= 75 {
+      let correctButton = view.viewWithTag(currentQuestion.correctAnswerNumber) as? UIButton
+      correctButton?.setTitleColor(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), for: .normal)
+    } else {
+      let randomButtonNumber = Int.random(in: 0...3)
+      let randomButton = view.viewWithTag(randomButtonNumber) as? UIButton
+      randomButton?.setTitleColor(#colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), for: .normal)
+    }
+    
+    hintButtonCallFriend.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+    hintButtonCallFriend.isEnabled = false
   }
   
   @IBAction func audienceHelpButtonWasPressed(_ sender: Any) {
