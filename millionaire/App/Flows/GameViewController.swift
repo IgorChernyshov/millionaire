@@ -61,7 +61,8 @@ final class GameViewController: UIViewController {
   }
   
   private func nextQuestion() {
-    // TODO: Reset answer buttons state
+    resetButtons()
+    
     guard let currentQuestion = questions.first else { return }
     
     questionLabel.text = currentQuestion.question
@@ -69,6 +70,17 @@ final class GameViewController: UIViewController {
     answerButtonB.setTitle(currentQuestion.answers[1], for: .normal)
     answerButtonC.setTitle(currentQuestion.answers[2], for: .normal)
     answerButtonD.setTitle(currentQuestion.answers[3], for: .normal)
+  }
+  
+  private func resetButtons() {
+    answerButtonA.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    answerButtonA.isEnabled = true
+    answerButtonB.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    answerButtonB.isEnabled = true
+    answerButtonC.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    answerButtonC.isEnabled = true
+    answerButtonD.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    answerButtonD.isEnabled = true
   }
   
   private func showGameOverAlert(withTitle title: String, andMessage message: String) {
@@ -93,7 +105,6 @@ final class GameViewController: UIViewController {
     guard let currentQuestion = questions.first else { return }
     
     if sender.tag == currentQuestion.correctAnswerNumber {
-      // TODO: Increase score
       gameDelegate?.answeredCorrect()
       questions.removeFirst()
       
@@ -106,14 +117,48 @@ final class GameViewController: UIViewController {
   }
 
   @IBAction func fiftyFiftyButtonWasPressed(_ sender: Any) {
+    provideFiftyFiftyHint()
+    
     gameDelegate?.used(hint: "fiftyFifty")
   }
   
+  private func provideFiftyFiftyHint() {
+    guard let currentQuestion = questions.first else { return }
+    
+    switch currentQuestion.correctAnswerNumber {
+    case 0,2:
+      answerButtonB.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+      answerButtonB.isEnabled = false
+      answerButtonD.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+      answerButtonD.isEnabled = false
+    case 1,3:
+      answerButtonA.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+      answerButtonA.isEnabled = false
+      answerButtonC.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+      answerButtonC.isEnabled = false
+    default:
+      return
+    }
+    
+    hintButtonFiftyFifty.isEnabled = false
+    hintButtonFiftyFifty.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+  }
+  
   @IBAction func callFriendButtonWasPressed(_ sender: Any) {
+    
+    hintButtonCallFriend.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+    hintButtonCallFriend.isEnabled = false
     gameDelegate?.used(hint: "callFriend")
   }
   
+  private func provideCallFriendHint() {
+    
+  }
+  
   @IBAction func audienceHelpButtonWasPressed(_ sender: Any) {
+    
+    hintButtonAudienceHelp.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), for: .normal)
+    hintButtonAudienceHelp.isEnabled = false
     gameDelegate?.used(hint: "audienceHelp")
   }
 }

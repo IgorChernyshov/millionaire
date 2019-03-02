@@ -235,6 +235,9 @@
                         <outlet property="answerButtonB" destination="eEd-fS-lxT" id="XlZ-th-oaZ"/>
                         <outlet property="answerButtonC" destination="hGn-TL-6uO" id="8on-xM-zAp"/>
                         <outlet property="answerButtonD" destination="2oJ-a1-NCe" id="HU2-eK-k8g"/>
+                        <outlet property="audienceHelpButtonBackground" destination="z9q-Tr-t5V" id="Nxt-WZ-qvn"/>
+                        <outlet property="callFriendButtonBackground" destination="dny-xj-DUX" id="L2l-VY-xgD"/>
+                        <outlet property="fiftyFiftyButtonBackground" destination="AXc-gK-B5p" id="IX0-Gx-fdS"/>
                         <outlet property="hintButtonAudienceHelp" destination="ayT-DD-v7t" id="ckW-zg-2gN"/>
                         <outlet property="hintButtonCallFriend" destination="ksc-LK-18m" id="oVS-ZE-SV6"/>
                         <outlet property="hintButtonFiftyFifty" destination="bUd-e3-aQT" id="dRh-Ir-mFI"/>
