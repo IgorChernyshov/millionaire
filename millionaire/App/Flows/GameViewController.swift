@@ -8,7 +8,18 @@
 
 import UIKit
 
+protocol GameViewControllerDelegate: AnyObject {
+  func questionsForThisSession(total: Int)
+  func answeredCorrect()
+  func answeredIncorrect()
+  func used(hint: String)
+}
+
 class GameViewController: UIViewController {
+  
+  // MARK: - Delegates
+  
+  weak var gameDelegate: GameViewControllerDelegate?
   
   // MARK: - Variables
   
@@ -21,7 +32,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var answerButtonB: UIButton!
   @IBOutlet weak var answerButtonC: UIButton!
   @IBOutlet weak var answerButtonD: UIButton!
-  @IBOutlet weak var hintButton5050: UIButton!
+  @IBOutlet weak var hintButtonFiftyFifty: UIButton!
   @IBOutlet weak var hintButtonCallFriend: UIButton!
   @IBOutlet weak var hintButtonAudienceHelp: UIButton!
   
@@ -30,6 +41,7 @@ class GameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    gameDelegate = Game.instance.gameSession
     loadQuestions()
     nextQuestion()
   }
@@ -43,6 +55,9 @@ class GameViewController: UIViewController {
     }
     
     questions = decodedData.questions
+    
+    let questionsCount = questions.count
+    gameDelegate?.questionsForThisSession(total: questionsCount)
   }
   
   private func nextQuestion() {
@@ -67,7 +82,6 @@ class GameViewController: UIViewController {
   }
   
   private func checkIfPlayerWon() {
-    questions.removeFirst()
     if questions.isEmpty {
       showGameOverAlert(withTitle: "Ура!🥳", andMessage: "Ты ответил правильно на все вопросы!")
     }
@@ -80,12 +94,26 @@ class GameViewController: UIViewController {
     
     if sender.tag == currentQuestion.correctAnswerNumber {
       // TODO: Increase score
+      gameDelegate?.answeredCorrect()
+      questions.removeFirst()
+      
       checkIfPlayerWon()
       nextQuestion()
     } else {
+      gameDelegate?.answeredIncorrect()
       showGameOverAlert(withTitle: "Неверно", andMessage: "К сожалению, игра окончена 🙁")
     }
   }
 
+  @IBAction func fiftyFiftyButtonWasPressed(_ sender: Any) {
+    gameDelegate?.used(hint: "fiftyFifty")
+  }
+  
+  @IBAction func callFriendButtonWasPressed(_ sender: Any) {
+    gameDelegate?.used(hint: "callFriend")
+  }
+  
+  @IBAction func audienceHelpButtonWasPressed(_ sender: Any) {
+    gameDelegate?.used(hint: "audienceHelp")
+  }
 }
-

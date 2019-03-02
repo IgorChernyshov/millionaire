@@ -10,10 +10,12 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+  // MARK: - Button's methods
+  
+  @IBAction func playButtonWasPressed(_ sender: Any) {
+    let newGameSession = GameSession()
+    Game.instance.gameSession = newGameSession
+    performSegue(withIdentifier: "toGameVC", sender: self)
+  }
 
 }

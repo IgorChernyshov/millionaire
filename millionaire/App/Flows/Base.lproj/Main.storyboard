@@ -13,7 +13,7 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +162,9 @@
                                                 <state key="normal" title="50 : 50">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fiftyFiftyButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbN-BH-JaQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,6 +180,9 @@
                                                 <rect key="frame" x="64.5" y="0.0" width="45" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <state key="normal" title="📞"/>
+                                                <connections>
+                                                    <action selector="callFriendButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="784-ev-PDH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,6 +198,9 @@
                                                 <rect key="frame" x="65" y="0.0" width="45" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <state key="normal" title="👨‍👩‍👧‍👦"/>
+                                                <connections>
+                                                    <action selector="audienceHelpButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yhM-1N-NUg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,9 +235,9 @@
                         <outlet property="answerButtonB" destination="eEd-fS-lxT" id="XlZ-th-oaZ"/>
                         <outlet property="answerButtonC" destination="hGn-TL-6uO" id="8on-xM-zAp"/>
                         <outlet property="answerButtonD" destination="2oJ-a1-NCe" id="HU2-eK-k8g"/>
-                        <outlet property="hintButton5050" destination="bUd-e3-aQT" id="dRh-Ir-mFI"/>
                         <outlet property="hintButtonAudienceHelp" destination="ayT-DD-v7t" id="ckW-zg-2gN"/>
                         <outlet property="hintButtonCallFriend" destination="ksc-LK-18m" id="oVS-ZE-SV6"/>
+                        <outlet property="hintButtonFiftyFifty" destination="bUd-e3-aQT" id="dRh-Ir-mFI"/>
                         <outlet property="questionLabel" destination="cmb-Be-bVK" id="8Ct-dx-GHM"/>
                     </connections>
                 </viewController>
@@ -251,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="116" y="458"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="IAI-Fl-oxH">
             <objects>
-                <viewController id="s93-5b-dIX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="s93-5b-dIX" customClass="MainMenuViewController" customModule="millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0TL-PR-I2w">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +281,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="LLM-YB-VBE"/>
+                                                    <action selector="playButtonWasPressed:" destination="s93-5b-dIX" eventType="touchUpInside" id="XWk-6F-6xA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -316,6 +325,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a8b-n0-IKi"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toGameVC" id="eAo-rM-peZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEm-VZ-qio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
