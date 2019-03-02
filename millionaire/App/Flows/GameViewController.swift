@@ -15,7 +15,7 @@ protocol GameViewControllerDelegate: AnyObject {
   func used(hint: String)
 }
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
   
   // MARK: - Delegates
   

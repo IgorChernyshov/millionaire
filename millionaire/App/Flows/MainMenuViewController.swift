@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+final class MainMenuViewController: UIViewController {
 
   // MARK: - Button's methods
   

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Game: GameSessionDelegate {
+final class Game: GameSessionDelegate {
   
   // MARK: - Variables
   var gameSession: GameSession? {
@@ -16,7 +16,7 @@ class Game: GameSessionDelegate {
       gameSession?.sessionDelegate = self
     }
   }
-  var gameResults: [GameResult]?
+  var gameResults: [GameResult] = []
   
   // MARK: - Singleton initialization
   static let instance = Game()
@@ -28,7 +28,7 @@ class Game: GameSessionDelegate {
     let currentDate = Date()
     let newHighScoreRecord = GameResult(date: currentDate, percentOfQuestionsSolved: percentOfQuestionsSolved)
     
-    gameResults?.append(newHighScoreRecord)
+    gameResults.append(newHighScoreRecord)
     gameSession = nil
   }
   

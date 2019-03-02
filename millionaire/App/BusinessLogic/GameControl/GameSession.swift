@@ -12,7 +12,7 @@ protocol GameSessionDelegate: AnyObject {
   func gameEnded(with percentOfQuestionsSolved: Int)
 }
 
-class GameSession {
+final class GameSession {
   
   private var questionsSolved: Int = 0
   private var questionsTotal: Int = 0

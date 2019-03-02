@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class LightBlueGradientView: UIView {
+final class LightBlueGradientView: UIView {
 
   @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) {
     didSet {
