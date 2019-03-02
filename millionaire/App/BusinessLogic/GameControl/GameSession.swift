@@ -54,7 +54,7 @@ extension GameSession: GameViewControllerDelegate {
     questionsAnswered += 1
   }
   
-  func answeredIncorrect() {
+  func gameEnded() {
     sessionDelegate?.gameEnded(with: percentOfQuestionsAnswered)
   }
   

@@ -22,8 +22,8 @@ protocol GameViewControllerDelegate: AnyObject {
   /// Informs that player answered correct.
   func answeredCorrect()
   
-  /// Informs that player answered wrong.
-  func answeredIncorrect()
+  /// Informs that game ended.
+  func gameEnded()
 
   /// Informs that player used a hint.
   ///
@@ -121,6 +121,7 @@ final class GameViewController: UIViewController {
   /// Checks if player won the game.
   private func checkIfPlayerWon() {
     if questions.isEmpty {
+      gameDelegate?.gameEnded()
       showGameOverAlert(withTitle: "Ура!🥳", andMessage: "Ты ответил правильно на все вопросы!")
     }
   }
@@ -141,7 +142,7 @@ final class GameViewController: UIViewController {
       checkIfPlayerWon()
       nextQuestion()
     } else {
-      gameDelegate?.answeredIncorrect()
+      gameDelegate?.gameEnded()
       showGameOverAlert(withTitle: "Неверно", andMessage: "К сожалению, игра окончена 🙁")
     }
   }
