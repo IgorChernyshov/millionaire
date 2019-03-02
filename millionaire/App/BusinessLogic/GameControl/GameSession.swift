@@ -9,13 +9,20 @@
 import Foundation
 
 protocol GameSessionDelegate: AnyObject {
-  func gameEnded(with score: Int)
+  func gameEnded(with percentOfQuestionsSolved: Int)
 }
 
 class GameSession {
   
   private var questionsSolved: Int = 0
   private var questionsTotal: Int = 0
+  private lazy var percentOfQuestionsSolved: Int = {
+    guard questionsTotal != 0 else { return 0 }
+    
+    let ratioSolvedToNonSolved: Float = Float(questionsSolved) / Float(questionsTotal)
+    let percentOfSolvedToNonSolved: Int = Int(ratioSolvedToNonSolved * 100)
+    return percentOfSolvedToNonSolved
+  }()
   
   private var usedFiftyFifty: Bool = false
   private var usedCallFriend: Bool = false
@@ -36,7 +43,7 @@ extension GameSession: GameViewControllerDelegate {
   }
   
   func answeredIncorrect() {
-    sessionDelegate?.gameEnded(with: questionsSolved)
+    sessionDelegate?.gameEnded(with: percentOfQuestionsSolved)
   }
   
   func used(hint: String) {

@@ -11,6 +11,6 @@ import Foundation
 struct GameResult: Codable {
   
   let date: Date?
-  let score: Int?
+  let percentOfQuestionsSolved: Int?
   
 }

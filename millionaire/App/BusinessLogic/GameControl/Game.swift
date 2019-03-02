@@ -24,11 +24,11 @@ class Game: GameSessionDelegate {
   
   // MARK: - Methods
   
-  func gameEnded(with score: Int) {
+  func gameEnded(with percentOfQuestionsSolved: Int) {
     let currentDate = Date()
-    let newResult = GameResult(date: currentDate, score: score)
+    let newHighScoreRecord = GameResult(date: currentDate, percentOfQuestionsSolved: percentOfQuestionsSolved)
     
-    gameResults?.append(newResult)
+    gameResults?.append(newHighScoreRecord)
     gameSession = nil
   }
   
