@@ -8,10 +8,15 @@
 
 import UIKit
 
+/*
+ This view controller handles user's interaction with Main Menu.
+*/
+
 final class MainMenuViewController: UIViewController {
 
   // MARK: - Button's methods
   
+  /// Creates a new game session, assigns it to Game singleton and shows game screen.
   @IBAction func playButtonWasPressed(_ sender: Any) {
     let newGameSession = GameSession()
     Game.instance.gameSession = newGameSession

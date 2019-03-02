@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ This view controller shows information about completed games: game's date and the percent of questions answered.
+*/
+
 final class ResultsViewController: UIViewController {
   
   // MARK: - Outlets
@@ -32,6 +36,7 @@ final class ResultsViewController: UIViewController {
   
   // MARK: - Buttons methods
   
+  /// Returns to the main menu.
   @IBAction func backButtonWasPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
@@ -48,7 +53,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "highestScoresCell", for: indexPath)
     let result = Game.instance.gameResults[indexPath.row]
     cell.textLabel?.text = ResultsViewController.dateFormatter.string(from: result.date)
-    cell.detailTextLabel?.text = "Игра пройдена на \(result.percentOfQuestionsSolved)%"
+    cell.detailTextLabel?.text = "Игра пройдена на \(result.percentOfQuestionsAnswered)%"
     return cell
   }
   

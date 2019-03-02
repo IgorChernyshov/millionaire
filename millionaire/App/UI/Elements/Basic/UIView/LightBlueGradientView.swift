@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ This is a view of a light blue gradient color.
+*/
+
 @IBDesignable
 final class LightBlueGradientView: UIView {
 

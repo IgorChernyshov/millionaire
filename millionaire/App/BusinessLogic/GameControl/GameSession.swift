@@ -8,20 +8,31 @@
 
 import Foundation
 
+/*
+This class holds all the information regarding current game session.
+Number of questions answered, total number of questions, what hints are available.
+*/
+
 protocol GameSessionDelegate: AnyObject {
-  func gameEnded(with percentOfQuestionsSolved: Int)
+  /// Appends new result to the list of Game Results, sets current game session to nil.
+  ///
+  /// - Parameter percentOfQuestionsAnswered: This value is received from GameSessionDelegate.
+  /// Represents the ratio between questions answered and total questions.
+  func gameEnded(with percentOfQuestionsAnswered: Int)
 }
 
 final class GameSession {
   
-  private var questionsSolved: Int = 0
+  // MARK: - Variables
+  
+  private var questionsAnswered: Int = 0
   private var questionsTotal: Int = 0
-  private lazy var percentOfQuestionsSolved: Int = {
+  private lazy var percentOfQuestionsAnswered: Int = {
     guard questionsTotal != 0 else { return 0 }
     
-    let ratioSolvedToNonSolved: Float = Float(questionsSolved) / Float(questionsTotal)
-    let percentOfSolvedToNonSolved: Int = Int(ratioSolvedToNonSolved * 100)
-    return percentOfSolvedToNonSolved
+    let ratioAnsweredToNonAnswered: Float = Float(questionsAnswered) / Float(questionsTotal)
+    let percentOfAnsweredToNonAnswered: Int = Int(ratioAnsweredToNonAnswered * 100)
+    return percentOfAnsweredToNonAnswered
   }()
   
   private var usedFiftyFifty: Bool = false
@@ -32,6 +43,7 @@ final class GameSession {
 
 }
 
+// MARK: - GameViewControllerDelegate
 extension GameSession: GameViewControllerDelegate {
   
   func questionsForThisSession(total: Int) {
@@ -39,11 +51,11 @@ extension GameSession: GameViewControllerDelegate {
   }
   
   func answeredCorrect() {
-    questionsSolved += 1
+    questionsAnswered += 1
   }
   
   func answeredIncorrect() {
-    sessionDelegate?.gameEnded(with: percentOfQuestionsSolved)
+    sessionDelegate?.gameEnded(with: percentOfQuestionsAnswered)
   }
   
   func used(hint: String) {

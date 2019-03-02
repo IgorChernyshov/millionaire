@@ -8,9 +8,14 @@
 
 import Foundation
 
+/*
+This is a singleton. It holds current game session and can save results via a caretaker
+*/
+
 final class Game: GameSessionDelegate {
   
   // MARK: - Variables
+  
   var gameSession: GameSession? {
     didSet {
       gameSession?.sessionDelegate = self
@@ -26,16 +31,17 @@ final class Game: GameSessionDelegate {
   private let resultsCaretaker = ResultsCaretaker()
   
   // MARK: - Singleton initialization
+  
   static let instance = Game()
   private init() {
     gameResults = (try? resultsCaretaker.loadResults()) ?? []
   }
   
   // MARK: - Methods
-  
-  func gameEnded(with percentOfQuestionsSolved: Int) {
+
+  func gameEnded(with percentOfQuestionsAnswered: Int) {
     let currentDate = Date()
-    let newHighScoreRecord = GameResult(date: currentDate, percentOfQuestionsSolved: percentOfQuestionsSolved)
+    let newHighScoreRecord = GameResult(date: currentDate, percentOfQuestionsAnswered: percentOfQuestionsAnswered)
     
     gameResults.append(newHighScoreRecord)
     gameSession = nil

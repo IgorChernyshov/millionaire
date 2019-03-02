@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ This caretaker saves and loads results to/from UserDefaults.
+*/
+
 final class ResultsCaretaker {
   
   private let encoder = JSONEncoder()

@@ -8,9 +8,13 @@
 
 import Foundation
 
+/*
+This struct is codable and holds one result of the game: game's date and percent of questions answered.
+*/
+
 struct GameResult: Codable {
   
   let date: Date
-  let percentOfQuestionsSolved: Int
+  let percentOfQuestionsAnswered: Int
   
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+This struct is codable and holds an array of Questions
+*/
+
 struct Questions: Codable {
   
   let questions: [Question]
