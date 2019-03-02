@@ -25,7 +25,11 @@ class Game: GameSessionDelegate {
   // MARK: - Methods
   
   func gameEnded(with score: Int) {
-    // score records
+    let currentDate = Date()
+    let newResult = GameResult(date: currentDate, score: score)
+    
+    gameResults?.append(newResult)
+    gameSession = nil
   }
   
 }
