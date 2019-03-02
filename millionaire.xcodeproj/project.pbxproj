@@ -10,6 +10,9 @@
 		9C4C346B22292C74009BB9E1 /* LightBlueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C346A22292C74009BB9E1 /* LightBlueGradientView.swift */; };
 		9C4C347822293A53009BB9E1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C347722293A53009BB9E1 /* Question.swift */; };
 		9C4C347E2229417D009BB9E1 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C347D2229417D009BB9E1 /* questions.json */; };
+		9C4C3480222943F4009BB9E1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C347F222943F4009BB9E1 /* MainMenuViewController.swift */; };
+		9C4C348222294403009BB9E1 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C348122294403009BB9E1 /* ResultsViewController.swift */; };
+		9C4C348422295C67009BB9E1 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C348322295C67009BB9E1 /* Questions.swift */; };
 		9CC1AF962229095C001B8DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1AF952229095C001B8DA9 /* AppDelegate.swift */; };
 		9CC1AF982229095C001B8DA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1AF972229095C001B8DA9 /* GameViewController.swift */; };
 		9CC1AF9B2229095C001B8DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC1AF992229095C001B8DA9 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		9C4C346A22292C74009BB9E1 /* LightBlueGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBlueGradientView.swift; sourceTree = "<group>"; };
 		9C4C347722293A53009BB9E1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9C4C347D2229417D009BB9E1 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		9C4C347F222943F4009BB9E1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		9C4C348122294403009BB9E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		9C4C348322295C67009BB9E1 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		9CC1AF922229095C001B8DA9 /* millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = millionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC1AF952229095C001B8DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CC1AF972229095C001B8DA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +96,10 @@
 		9C4C347122293797009BB9E1 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				9CC1AF992229095C001B8DA9 /* Main.storyboard */,
 				9CC1AF972229095C001B8DA9 /* GameViewController.swift */,
+				9CC1AF992229095C001B8DA9 /* Main.storyboard */,
+				9C4C347F222943F4009BB9E1 /* MainMenuViewController.swift */,
+				9C4C348122294403009BB9E1 /* ResultsViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				9C4C347722293A53009BB9E1 /* Question.swift */,
+				9C4C348322295C67009BB9E1 /* Questions.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -236,9 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4C3480222943F4009BB9E1 /* MainMenuViewController.swift in Sources */,
 				9C4C347822293A53009BB9E1 /* Question.swift in Sources */,
 				9CC1AF982229095C001B8DA9 /* GameViewController.swift in Sources */,
+				9C4C348222294403009BB9E1 /* ResultsViewController.swift in Sources */,
 				9CC1AFB722291989001B8DA9 /* DarkBlueGradientView.swift in Sources */,
+				9C4C348422295C67009BB9E1 /* Questions.swift in Sources */,
 				9CC1AF962229095C001B8DA9 /* AppDelegate.swift in Sources */,
 				9C4C346B22292C74009BB9E1 /* LightBlueGradientView.swift in Sources */,
 			);
