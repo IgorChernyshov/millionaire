@@ -55,16 +55,14 @@ extension GameSession: GameViewControllerDelegate {
     sessionDelegate?.gameEnded(with: percentOfQuestionsAnswered)
   }
   
-  func used(hint: String) {
+  func used(hint: Hint) {
     switch hint {
-    case "fiftyFifty":
+    case .fiftyFifty:
       usedFiftyFifty = true
-    case "callFriend":
+    case .callFriend:
       usedCallFriend = true
-    case "audienceHelp":
+    case .audienceHelp:
       usedAudienceHelp = true
-    default:
-      return
     }
   }
   

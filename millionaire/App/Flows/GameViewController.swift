@@ -23,7 +23,7 @@ protocol GameViewControllerDelegate: AnyObject {
   /// Informs that player used a hint.
   ///
   /// - Parameter hint: Name of the hint that was used.
-  func used(hint: String)
+  func used(hint: Hint)
 }
 
 /// This view controller controls the game scene - shows questions, buttons with answers and allows to use hints.
@@ -149,7 +149,7 @@ final class GameViewController: UIViewController {
   @IBAction func fiftyFiftyButtonWasPressed(_ sender: Any) {
     provideFiftyFiftyHint()
     
-    gameDelegate?.used(hint: "fiftyFifty")
+    gameDelegate?.used(hint: .fiftyFifty)
   }
   
   /// Disables 2 buttons that have incorrect answers.
@@ -181,7 +181,7 @@ final class GameViewController: UIViewController {
   @IBAction func callFriendButtonWasPressed(_ sender: Any) {
     provideCallFriendHint()
     
-    gameDelegate?.used(hint: "callFriend")
+    gameDelegate?.used(hint: .callFriend)
   }
   
   /// With a 75% chance changes correct answer's button text color to green.
@@ -213,7 +213,7 @@ final class GameViewController: UIViewController {
   @IBAction func audienceHelpButtonWasPressed(_ sender: Any) {
     provideAudienceHelpHint()
     
-    gameDelegate?.used(hint: "audienceHelp")
+    gameDelegate?.used(hint: .audienceHelp)
   }
   
   /// Splits 100% of "votes" randomly between answers and adds them to answer buttons titles.
