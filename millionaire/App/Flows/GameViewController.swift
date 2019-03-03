@@ -8,16 +8,11 @@
 
 import UIKit
 
-/*
- This view controller controls the game scene - shows questions, buttons with answers and allows to use hints.
-*/
-
 protocol GameViewControllerDelegate: AnyObject {
   /// Informs how many questions were loaded for this session.
   ///
   /// - Parameter total: Total number of questions for this game session.
   func questionsForThisSession(total: Int)
-  
   
   /// Informs that player answered correct.
   func answeredCorrect()
@@ -31,6 +26,7 @@ protocol GameViewControllerDelegate: AnyObject {
   func used(hint: String)
 }
 
+/// This view controller controls the game scene - shows questions, buttons with answers and allows to use hints.
 final class GameViewController: UIViewController {
   
   // MARK: - Delegates

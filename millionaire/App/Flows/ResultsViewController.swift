@@ -8,10 +8,8 @@
 
 import UIKit
 
-/*
- This view controller shows information about completed games: game's date and the percent of questions answered.
-*/
 
+/// This view controller shows information about completed games: game's date and the percent of questions answered.
 final class ResultsViewController: UIViewController {
   
   // MARK: - Outlets

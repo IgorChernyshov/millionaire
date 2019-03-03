@@ -8,11 +8,8 @@
 
 import Foundation
 
-/*
-This class holds all the information regarding current game session.
-Number of questions answered, total number of questions, what hints are available.
-*/
-
+/// This class holds all the information regarding current game session.
+/// Number of questions answered, total number of questions, what hints are available.
 protocol GameSessionDelegate: AnyObject {
   /// Appends new result to the list of Game Results, sets current game session to nil.
   ///

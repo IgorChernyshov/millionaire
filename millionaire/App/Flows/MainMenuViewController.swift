@@ -8,10 +8,7 @@
 
 import UIKit
 
-/*
- This view controller handles user's interaction with Main Menu.
-*/
-
+/// This view controller handles user's interaction with Main Menu.
 final class MainMenuViewController: UIViewController {
 
   // MARK: - Button's methods

@@ -8,11 +8,8 @@
 
 import UIKit
 
-/*
- This is a view of a dark blue gradient color.
-*/
-
 @IBDesignable
+/// This is a view of a dark blue gradient color.
 final class DarkBlueGradientView: UIView {
   
   @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1) {

@@ -8,10 +8,7 @@
 
 import Foundation
 
-/*
-This struct is codable and holds a question, answers for the question and the number of correct answer.
-*/
-
+/// This struct is codable and holds a question, answers for the question and the number of correct answer.
 struct Question: Codable {
   
   let question: String

@@ -8,10 +8,7 @@
 
 import Foundation
 
-/*
-This is a singleton. It holds current game session and can save results via a caretaker
-*/
-
+/// This is a singleton. It holds current game session and can save results via a caretaker
 final class Game: GameSessionDelegate {
   
   // MARK: - Variables
