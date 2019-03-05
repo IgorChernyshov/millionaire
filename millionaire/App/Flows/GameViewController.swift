@@ -51,6 +51,8 @@ final class GameViewController: UIViewController {
   // MARK: - Outlets
   
   @IBOutlet weak var questionLabel: UILabel!
+  @IBOutlet weak var numberOfCorrectAnswersLabel: UILabel!
+  @IBOutlet weak var percentsOfGameCompletedLabel: UILabel!
   @IBOutlet weak var answerButtonA: UIButton!
   @IBOutlet weak var answerButtonB: UIButton!
   @IBOutlet weak var answerButtonC: UIButton!

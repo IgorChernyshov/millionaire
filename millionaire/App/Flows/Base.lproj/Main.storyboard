@@ -18,8 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="xrj-N9-nz6" userLabel="Score Labbels Stack">
+                                <rect key="frame" x="15" y="20" width="637" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правильных ответов: " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pz-GZ-WZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра завершена на %" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qE-Pn-SUz">
+                                        <rect key="frame" x="332" y="0.0" width="305" height="25"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPN-Ng-Q1Y" userLabel="Question View" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
-                                <rect key="frame" x="16" y="15" width="635" height="100"/>
+                                <rect key="frame" x="16" y="60" width="635" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-Be-bVK">
                                         <rect key="frame" x="30" y="15" width="575" height="70"/>
@@ -40,16 +57,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-No-Q5v" userLabel="Answers Stack">
-                                <rect key="frame" x="16" y="125" width="635" height="172"/>
+                                <rect key="frame" x="16" y="170" width="635" height="127"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-hP-LAZ" userLabel="Answers A and B Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="635" height="82.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="635" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-GM-x3s" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="307.5" height="82.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="307.5" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-uZ-1Kc">
-                                                        <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
+                                                        <rect key="frame" x="15" y="15" width="277.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer A">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,16 +81,17 @@
                                                     <constraint firstItem="hf8-uZ-1Kc" firstAttribute="centerX" secondItem="JC4-GM-x3s" secondAttribute="centerX" id="5cp-9A-P7f"/>
                                                     <constraint firstAttribute="bottom" secondItem="hf8-uZ-1Kc" secondAttribute="bottom" constant="15" id="HKv-K1-W9Z"/>
                                                     <constraint firstItem="hf8-uZ-1Kc" firstAttribute="centerY" secondItem="JC4-GM-x3s" secondAttribute="centerY" id="LBO-Se-rEn"/>
+                                                    <constraint firstAttribute="height" constant="60" id="SrL-GE-JVj"/>
                                                     <constraint firstItem="hf8-uZ-1Kc" firstAttribute="top" secondItem="JC4-GM-x3s" secondAttribute="top" constant="15" id="hNe-9S-IwU"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hf8-uZ-1Kc" secondAttribute="trailing" constant="15" id="mpk-Eu-SBf"/>
                                                     <constraint firstItem="hf8-uZ-1Kc" firstAttribute="leading" secondItem="JC4-GM-x3s" secondAttribute="leading" constant="15" id="t9n-cd-0at"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5My-IO-wqw" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
-                                                <rect key="frame" x="327.5" y="0.0" width="307.5" height="82.5"/>
+                                                <rect key="frame" x="327.5" y="0.0" width="307.5" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-fS-lxT">
-                                                        <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
+                                                        <rect key="frame" x="15" y="15" width="277.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer B">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,13 +114,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-ms-7vQ" userLabel="Answers C and D Stack">
-                                        <rect key="frame" x="0.0" y="89.5" width="635" height="82.5"/>
+                                        <rect key="frame" x="0.0" y="67" width="635" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-yF-O3T" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="307.5" height="82.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="307.5" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-TL-6uO">
-                                                        <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
+                                                        <rect key="frame" x="15" y="15" width="277.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer C">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,10 +141,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlY-8G-hZV" customClass="DarkBlueGradientView" customModule="millionaire" customModuleProvider="target">
-                                                <rect key="frame" x="327.5" y="0.0" width="307.5" height="82.5"/>
+                                                <rect key="frame" x="327.5" y="0.0" width="307.5" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-a1-NCe">
-                                                        <rect key="frame" x="15" y="15" width="277.5" height="52.5"/>
+                                                        <rect key="frame" x="15" y="15" width="277.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <state key="normal" title="Answer D">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,12 +238,15 @@
                             <constraint firstItem="wbq-No-Q5v" firstAttribute="top" secondItem="RPN-Ng-Q1Y" secondAttribute="bottom" constant="10" id="FuM-fa-FPV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbq-No-Q5v" secondAttribute="trailing" constant="16" id="SlA-gL-5ke"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RPN-Ng-Q1Y" secondAttribute="trailing" constant="16" id="ZQW-tB-Odu"/>
-                            <constraint firstItem="RPN-Ng-Q1Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eyP-0v-Otj"/>
                             <constraint firstItem="wbq-No-Q5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l3D-JS-yem"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xrj-N9-nz6" secondAttribute="trailing" constant="15" id="mFe-5c-caq"/>
+                            <constraint firstItem="xrj-N9-nz6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="nZw-ao-1Tw"/>
                             <constraint firstItem="kdb-3n-pXd" firstAttribute="top" secondItem="wbq-No-Q5v" secondAttribute="bottom" constant="10" id="oue-pG-hQF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdb-3n-pXd" secondAttribute="trailing" constant="16" id="qmp-Pu-bSB"/>
+                            <constraint firstItem="RPN-Ng-Q1Y" firstAttribute="top" secondItem="xrj-N9-nz6" secondAttribute="bottom" constant="15" id="s14-yV-IW9"/>
                             <constraint firstItem="RPN-Ng-Q1Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="s3i-Y7-82B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kdb-3n-pXd" secondAttribute="bottom" constant="8" id="sVz-21-l60"/>
+                            <constraint firstItem="xrj-N9-nz6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="udr-i0-OaV"/>
                             <constraint firstItem="kdb-3n-pXd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uiZ-zk-aeY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -238,12 +259,14 @@
                         <outlet property="hintButtonAudienceHelp" destination="ayT-DD-v7t" id="ckW-zg-2gN"/>
                         <outlet property="hintButtonCallFriend" destination="ksc-LK-18m" id="oVS-ZE-SV6"/>
                         <outlet property="hintButtonFiftyFifty" destination="bUd-e3-aQT" id="dRh-Ir-mFI"/>
+                        <outlet property="numberOfCorrectAnswersLabel" destination="8pz-GZ-WZz" id="kcA-12-Zco"/>
+                        <outlet property="percentsOfGameCompletedLabel" destination="8qE-Pn-SUz" id="abp-RZ-AZP"/>
                         <outlet property="questionLabel" destination="cmb-Be-bVK" id="8Ct-dx-GHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-713"/>
+            <point key="canvasLocation" x="115.59220389805098" y="-714.39999999999998"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="Yth-KP-BfS">
