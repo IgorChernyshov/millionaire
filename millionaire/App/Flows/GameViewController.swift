@@ -67,8 +67,21 @@ final class GameViewController: UIViewController {
     super.viewDidLoad()
     
     gameDelegate = Game.instance.gameSession
+    addObserverToUpdateScores()
     loadQuestions()
     nextQuestion()
+  }
+  
+  private func addObserverToUpdateScores() {
+    Game.instance.gameSession?.questionsAnswered.addObserver(self, options: [.initial, .new], closure: {
+      [weak self] (questionsAnswered, _) in
+      self?.numberOfCorrectAnswersLabel.text = "Правильных ответов: \(questionsAnswered)"
+    })
+    Game.instance.gameSession?.percentOfQuestionsAnswered.addObserver(self, options: [.initial, .new], closure: {
+      [weak self] (percentOfQuestionsAnswered, _) in
+      let percentsOfGameCompleted = Game.instance.gameSession?.percentOfQuestionsAnswered.value
+      self?.percentsOfGameCompletedLabel.text = "Пройдено \(percentsOfGameCompleted ?? 0)% игры"
+    })
   }
   
   /// Loads questions from questions.json and puts them into VC's array. Informs a delegate when ready.
