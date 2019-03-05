@@ -25,6 +25,8 @@ final class Game: GameSessionDelegate {
     }
   }
   
+  var randomQuestionsOrder: Bool = false
+  
   private let resultsCaretaker = ResultsCaretaker()
   
   // MARK: - Singleton initialization

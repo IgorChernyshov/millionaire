@@ -66,8 +66,11 @@ final class GameViewController: UIViewController {
       let decodedData = try? decoder.decode(Questions.self, from: data) else {
         fatalError("Cannot load questions from disk!")
     }
-    
     questions = decodedData.questions
+    
+    if Game.instance.randomQuestionsOrder {
+      questions.shuffle()
+    }
     
     let questionsCount = questions.count
     gameDelegate?.questionsForThisSession(total: questionsCount)

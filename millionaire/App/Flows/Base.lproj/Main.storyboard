@@ -434,6 +434,9 @@
                                 <state key="normal" title="&lt; Назад">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonWasPressed:" destination="Rx1-yA-CUL" eventType="touchUpInside" id="voe-pH-VXp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки игры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97R-k9-x3o">
                                 <rect key="frame" x="237.5" y="23.5" width="192" height="29"/>
@@ -441,13 +444,36 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WBN-db-gXw" userLabel="Random Questions Order Stack">
+                                <rect key="frame" x="20" y="72" width="360" height="31"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AKK-Tl-pJv">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.35236515410000002" green="0.75506737550000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="randomQuestionsOrderSwitchWasToggled:" destination="Rx1-yA-CUL" eventType="valueChanged" id="aci-5K-Z9g"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопросы в случайном порядке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9U-XC-MHr">
+                                        <rect key="frame" x="69" y="0.0" width="291" height="31"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vCB-ag-7uD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WBN-db-gXw" secondAttribute="trailing" constant="20" id="4EP-vq-pgl"/>
                             <constraint firstItem="97R-k9-x3o" firstAttribute="centerX" secondItem="9Q7-PS-vzU" secondAttribute="centerX" id="6WU-SY-bzp"/>
+                            <constraint firstItem="vCB-ag-7uD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WBN-db-gXw" secondAttribute="bottom" constant="16" id="7PZ-Tl-sBx"/>
+                            <constraint firstItem="WBN-db-gXw" firstAttribute="leading" secondItem="vCB-ag-7uD" secondAttribute="leading" constant="20" id="Afh-xq-Sbn"/>
                             <constraint firstItem="7lQ-su-qIp" firstAttribute="leading" secondItem="vCB-ag-7uD" secondAttribute="leading" constant="20" id="Jig-Vr-cUW"/>
                             <constraint firstItem="7lQ-su-qIp" firstAttribute="top" secondItem="vCB-ag-7uD" secondAttribute="top" constant="20" id="LSZ-kw-nBk"/>
                             <constraint firstItem="97R-k9-x3o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7lQ-su-qIp" secondAttribute="trailing" constant="10" id="Lcx-YO-fzv"/>
+                            <constraint firstItem="WBN-db-gXw" firstAttribute="top" secondItem="7lQ-su-qIp" secondAttribute="bottom" constant="16" id="f2A-c4-eyj"/>
                             <constraint firstItem="97R-k9-x3o" firstAttribute="centerY" secondItem="7lQ-su-qIp" secondAttribute="centerY" id="gYu-By-haD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vCB-ag-7uD"/>
