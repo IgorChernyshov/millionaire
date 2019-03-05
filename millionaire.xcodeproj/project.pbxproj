@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C08C1EE222EDC3000870504 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08C1ED222EDC3000870504 /* Observable.swift */; };
+		9C08C1F0222EDD5600870504 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08C1EF222EDD5600870504 /* Observer.swift */; };
 		9C4C346B22292C74009BB9E1 /* LightBlueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C346A22292C74009BB9E1 /* LightBlueGradientView.swift */; };
 		9C4C347822293A53009BB9E1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C347722293A53009BB9E1 /* Question.swift */; };
 		9C4C347E2229417D009BB9E1 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C347D2229417D009BB9E1 /* questions.json */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C08C1ED222EDC3000870504 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		9C08C1EF222EDD5600870504 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		9C4C346A22292C74009BB9E1 /* LightBlueGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBlueGradientView.swift; sourceTree = "<group>"; };
 		9C4C347722293A53009BB9E1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9C4C347D2229417D009BB9E1 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC1AFA12229095E001B8DA9 /* Info.plist */,
+				9C08C1ED222EDC3000870504 /* Observable.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				9C4C347722293A53009BB9E1 /* Question.swift */,
 				9C4C348322295C67009BB9E1 /* Questions.swift */,
 				9C5A20A6222EAD7B007C81E5 /* QuestionsOrder.swift */,
+				9C08C1EF222EDD5600870504 /* Observer.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -307,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C08C1EE222EDC3000870504 /* Observable.swift in Sources */,
+				9C08C1F0222EDD5600870504 /* Observer.swift in Sources */,
 				9C4C3480222943F4009BB9E1 /* MainMenuViewController.swift in Sources */,
 				9C4C3487222A491F009BB9E1 /* Game.swift in Sources */,
 				9C5A20A1222EA6E1007C81E5 /* QuestionsOrderStrategy.swift in Sources */,
