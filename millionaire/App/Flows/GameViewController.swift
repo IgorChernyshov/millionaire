@@ -44,6 +44,18 @@ final class GameViewController: UIViewController {
     }
   }
   
+  private var questionsModeStrategy: QuestionsModeStrategy {
+    switch Game.instance.customQuestions {
+    case .disabled:
+      return CustomQuestionsDisabledStrategy()
+    case .customOnly:
+      return CustomQuestionsOnlyStrategy()
+    case .mixed:
+      // TODO: Add mixed mode
+      return CustomQuestionsDisabledStrategy()
+    }
+  }
+  
   // MARK: - Variables
   
   private var questions: [Question] = []
@@ -68,10 +80,12 @@ final class GameViewController: UIViewController {
     
     gameDelegate = Game.instance.gameSession
     addObserverToUpdateScores()
-    loadQuestions()
+    prepareQuestions()
     nextQuestion()
   }
   
+  /// Adds custom observers to Questions Answered and Percent of Questions Answered counters in Game singleton.
+  /// These observers reflect changes on score labels as soon as values are changed.
   private func addObserverToUpdateScores() {
     Game.instance.gameSession?.questionsAnswered.addObserver(self, options: [.initial, .new], closure: {
       [weak self] (questionsAnswered, _) in
@@ -85,14 +99,9 @@ final class GameViewController: UIViewController {
   }
   
   /// Loads questions from questions.json and puts them into VC's array. Informs a delegate when ready.
-  private func loadQuestions() {
-    let decoder = JSONDecoder()
-    guard let url = Bundle.main.url(forResource: "questions", withExtension: "json"),
-      let data: Data = try? NSData(contentsOf: url) as Data,
-      let decodedData = try? decoder.decode(Questions.self, from: data) else {
-        fatalError("Cannot load questions from disk!")
-    }
-    let loadedQuestions = decodedData.questions
+  private func prepareQuestions() {
+    let loadedQuestions = questionsModeStrategy.loadQuestions()
+    
     questions = questionsOrderStrategy.setOrder(of: loadedQuestions)
     
     let questionsCount = questions.count

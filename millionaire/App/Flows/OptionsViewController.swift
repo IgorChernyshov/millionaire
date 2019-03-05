@@ -14,21 +14,25 @@ final class OptionsViewController: UIViewController {
   // MARK: - Outlets
   
   @IBOutlet weak var questionsOrderSwitch: UISwitch!
+  @IBOutlet weak var customQuestionsSwitch: UISwitch!
   
   // MARK: - Controller's methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setQuestionsOrderSwitchPositionOnLaunch()
+    setSwitchesPositionOnLoad()
   }
   
   /// Checks what is current questions order and sets the switch accordingly.
-  private func setQuestionsOrderSwitchPositionOnLaunch() {
+  private func setSwitchesPositionOnLoad() {
     let isRandomQuestionsOrderSet = Game.instance.questionsOrder == .random
     questionsOrderSwitch.isOn = isRandomQuestionsOrderSet
+    
+    let areCustomQuestionsEnabled = Game.instance.customQuestions == .customOnly
+    customQuestionsSwitch.isOn = areCustomQuestionsEnabled
   }
   
-  // MARK: - Button's methods
+  // MARK: - Control's methods
   
   /// This method dismisses Options screen and navigates user back to Main Menu screen.
   ///
@@ -37,7 +41,7 @@ final class OptionsViewController: UIViewController {
     dismiss(animated: true, completion: nil)
   }
   
-  /// This method sets questions order in Game singleton on according UISwitch toggle.
+  /// This method sets questions order in Game singleton according to UISwitch toggle.
   ///
   /// - Parameter sender: UISwitch that was toggled.
   @IBAction func randomQuestionsOrderSwitchWasToggled(_ sender: UISwitch) {
@@ -47,6 +51,20 @@ final class OptionsViewController: UIViewController {
       Game.instance.questionsOrder = .sequential
     case true:
       Game.instance.questionsOrder = .random
+    }
+  }
+  
+  /// This method sets questions mode in Game singleton according to UISwitch toggle.
+  ///
+  /// - Parameter sender: UISwitch that was toggled.
+  @IBAction func customQuestionsSwitchWasToggled(_ sender: UISwitch) {
+    // Switch label: Add custom questions to the game. Default value: Off.
+    // TODO: Replace with a segmented control and add Mixed Mode
+    switch sender.isOn {
+    case false:
+      Game.instance.customQuestions = .disabled
+    case true:
+      Game.instance.customQuestions = .customOnly
     }
   }
   
