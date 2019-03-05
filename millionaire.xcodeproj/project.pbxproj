@@ -74,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				9C4C348D222A6D3B009BB9E1 /* Caretakers */,
+				9C5A209A222E96D3007C81E5 /* Strategies */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -99,8 +100,8 @@
 		9C4C347022293788009BB9E1 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				9C4C3485222A4913009BB9E1 /* GameControl */,
 				9CC1AF952229095C001B8DA9 /* AppDelegate.swift */,
+				9C4C3485222A4913009BB9E1 /* GameControl */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -153,9 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				9C4C348A222A5A3D009BB9E1 /* GameResult.swift */,
+				9C5A2098222C3132007C81E5 /* Hint.swift */,
 				9C4C347722293A53009BB9E1 /* Question.swift */,
 				9C4C348322295C67009BB9E1 /* Questions.swift */,
-				9C5A2098222C3132007C81E5 /* Hint.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -175,6 +176,13 @@
 				9C4C348E222A6D50009BB9E1 /* ResultsCaretaker.swift */,
 			);
 			path = Caretakers;
+			sourceTree = "<group>";
+		};
+		9C5A209A222E96D3007C81E5 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Strategies;
 			sourceTree = "<group>";
 		};
 		9CC1AF892229095C001B8DA9 = {

@@ -9,7 +9,5 @@
 import Foundation
 
 enum Hint {
-  case fiftyFifty
-  case callFriend
-  case audienceHelp
+  case fiftyFifty, callFriend, audienceHelp
 }
