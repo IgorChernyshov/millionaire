@@ -33,6 +33,17 @@ final class GameViewController: UIViewController {
   
   weak var gameDelegate: GameViewControllerDelegate?
   
+  // MARK: - Strategies
+  
+  private var questionsOrderStrategy: QuestionsOrderStrategy {
+    switch Game.instance.questionsOrder {
+    case .sequential:
+      return SequentialQuestionsOrderStrategy()
+    case .random:
+      return RandomQuestionsOrderStrategy()
+    }
+  }
+  
   // MARK: - Variables
   
   private var questions: [Question] = []
@@ -66,11 +77,8 @@ final class GameViewController: UIViewController {
       let decodedData = try? decoder.decode(Questions.self, from: data) else {
         fatalError("Cannot load questions from disk!")
     }
-    questions = decodedData.questions
-    
-    if Game.instance.randomQuestionsOrder {
-      questions.shuffle()
-    }
+    let loadedQuestions = decodedData.questions
+    questions = questionsOrderStrategy.setOrder(of: loadedQuestions)
     
     let questionsCount = questions.count
     gameDelegate?.questionsForThisSession(total: questionsCount)

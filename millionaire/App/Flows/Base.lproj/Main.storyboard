@@ -478,6 +478,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vCB-ag-7uD"/>
                     </view>
+                    <connections>
+                        <outlet property="questionsOrderSwitch" destination="AKK-Tl-pJv" id="bXs-gg-dgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaW-CS-Iwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

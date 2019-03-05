@@ -11,6 +11,25 @@ import UIKit
 /// This view controller allows user to change various game options that are stored in Game singleton.
 final class OptionsViewController: UIViewController {
   
+  // MARK: - Outlets
+  
+  @IBOutlet weak var questionsOrderSwitch: UISwitch!
+  
+  // MARK: - Controller's methods
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    setQuestionsOrderSwitchPositionOnLaunch()
+  }
+  
+  /// Checks what is current questions order and sets the switch accordingly.
+  private func setQuestionsOrderSwitchPositionOnLaunch() {
+    let isRandomQuestionsOrderSet = Game.instance.questionsOrder == .random
+    questionsOrderSwitch.isOn = isRandomQuestionsOrderSet
+  }
+  
+  // MARK: - Button's methods
+  
   /// This method dismisses Options screen and navigates user back to Main Menu screen.
   ///
   /// - Parameter sender: UIButton that was pressed.
@@ -23,8 +42,12 @@ final class OptionsViewController: UIViewController {
   /// - Parameter sender: UISwitch that was toggled.
   @IBAction func randomQuestionsOrderSwitchWasToggled(_ sender: UISwitch) {
     // Switch label: Random questions order. Default value: Off.
-    // randomQuestionsOrder matches switch's state
-    Game.instance.randomQuestionsOrder = sender.isOn
+    switch sender.isOn {
+    case false:
+      Game.instance.questionsOrder = .sequential
+    case true:
+      Game.instance.questionsOrder = .random
+    }
   }
   
 }

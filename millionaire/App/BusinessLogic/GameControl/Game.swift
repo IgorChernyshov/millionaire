@@ -25,7 +25,7 @@ final class Game: GameSessionDelegate {
     }
   }
   
-  var randomQuestionsOrder: Bool = false
+  var questionsOrder: QuestionsOrder = .sequential
   
   private let resultsCaretaker = ResultsCaretaker()
   
