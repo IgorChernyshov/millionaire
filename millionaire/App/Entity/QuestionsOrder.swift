@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// This entity contains information about questions order.
+///
+/// - sequential: Questions are always played in the same order.
+/// - random: Questions are played in a completely random order.
 enum QuestionsOrder {
   case sequential, random
 }
