@@ -7,3 +7,5 @@ This is a game that implements the following patterns:
 + Delegate
 + Singleton
 + Memento
++ Strategy
++ Observer
