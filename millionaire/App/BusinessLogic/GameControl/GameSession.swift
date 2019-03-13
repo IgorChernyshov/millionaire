@@ -22,15 +22,9 @@ final class GameSession {
   
   // MARK: - Variables
   
-  private var questionsAnswered: Int = 0
   private var questionsTotal: Int = 0
-  private lazy var percentOfQuestionsAnswered: Int = {
-    guard questionsTotal != 0 else { return 0 }
-    
-    let ratioAnsweredToNonAnswered: Float = Float(questionsAnswered) / Float(questionsTotal)
-    let percentOfAnsweredToNonAnswered: Int = Int(ratioAnsweredToNonAnswered * 100)
-    return percentOfAnsweredToNonAnswered
-  }()
+  var questionsAnswered = Observable<Int>(0)
+  var percentOfQuestionsAnswered = Observable<Int>(0)
   
   private var usedFiftyFifty: Bool = false
   private var usedCallFriend: Bool = false
@@ -48,11 +42,19 @@ extension GameSession: GameViewControllerDelegate {
   }
   
   func answeredCorrect() {
-    questionsAnswered += 1
+    questionsAnswered.value += 1
+    calculatePercentOfQuestionsAnswered()
+  }
+  
+  func calculatePercentOfQuestionsAnswered() {
+    guard questionsTotal != 0 else { return }
+    
+    let ratioAnsweredToNonAnswered: Float = Float(questionsAnswered.value) / Float(questionsTotal)
+    percentOfQuestionsAnswered.value = Int(ratioAnsweredToNonAnswered * 100)
   }
   
   func gameEnded() {
-    sessionDelegate?.gameEnded(with: percentOfQuestionsAnswered)
+    sessionDelegate?.gameEnded(with: percentOfQuestionsAnswered.value)
   }
   
   func used(hint: Hint) {

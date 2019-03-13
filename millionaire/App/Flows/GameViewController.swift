@@ -33,6 +33,29 @@ final class GameViewController: UIViewController {
   
   weak var gameDelegate: GameViewControllerDelegate?
   
+  // MARK: - Strategies
+  
+  private var questionsOrderStrategy: QuestionsOrderStrategy {
+    switch Game.instance.questionsOrder {
+    case .sequential:
+      return SequentialQuestionsOrderStrategy()
+    case .random:
+      return RandomQuestionsOrderStrategy()
+    }
+  }
+  
+  private var questionsModeStrategy: QuestionsModeStrategy {
+    switch Game.instance.customQuestions {
+    case .disabled:
+      return CustomQuestionsDisabledStrategy()
+    case .customOnly:
+      return CustomQuestionsOnlyStrategy()
+    case .mixed:
+      // TODO: Add mixed mode
+      return CustomQuestionsDisabledStrategy()
+    }
+  }
+  
   // MARK: - Variables
   
   private var questions: [Question] = []
@@ -40,6 +63,8 @@ final class GameViewController: UIViewController {
   // MARK: - Outlets
   
   @IBOutlet weak var questionLabel: UILabel!
+  @IBOutlet weak var numberOfCorrectAnswersLabel: UILabel!
+  @IBOutlet weak var percentsOfGameCompletedLabel: UILabel!
   @IBOutlet weak var answerButtonA: UIButton!
   @IBOutlet weak var answerButtonB: UIButton!
   @IBOutlet weak var answerButtonC: UIButton!
@@ -54,20 +79,30 @@ final class GameViewController: UIViewController {
     super.viewDidLoad()
     
     gameDelegate = Game.instance.gameSession
-    loadQuestions()
+    addObserverToUpdateScores()
+    prepareQuestions()
     nextQuestion()
   }
   
+  /// Adds custom observers to Questions Answered and Percent of Questions Answered counters in Game singleton.
+  /// These observers reflect changes on score labels as soon as values are changed.
+  private func addObserverToUpdateScores() {
+    Game.instance.gameSession?.questionsAnswered.addObserver(self, options: [.initial, .new], closure: {
+      [weak self] (questionsAnswered, _) in
+      self?.numberOfCorrectAnswersLabel.text = "Правильных ответов: \(questionsAnswered)"
+    })
+    Game.instance.gameSession?.percentOfQuestionsAnswered.addObserver(self, options: [.initial, .new], closure: {
+      [weak self] (percentOfQuestionsAnswered, _) in
+      let percentsOfGameCompleted = Game.instance.gameSession?.percentOfQuestionsAnswered.value
+      self?.percentsOfGameCompletedLabel.text = "Пройдено \(percentsOfGameCompleted ?? 0)% игры"
+    })
+  }
+  
   /// Loads questions from questions.json and puts them into VC's array. Informs a delegate when ready.
-  private func loadQuestions() {
-    let decoder = JSONDecoder()
-    guard let url = Bundle.main.url(forResource: "questions", withExtension: "json"),
-      let data: Data = try? NSData(contentsOf: url) as Data,
-      let decodedData = try? decoder.decode(Questions.self, from: data) else {
-        fatalError("Cannot load questions from disk!")
-    }
+  private func prepareQuestions() {
+    let loadedQuestions = questionsModeStrategy.loadQuestions()
     
-    questions = decodedData.questions
+    questions = questionsOrderStrategy.setOrder(of: loadedQuestions)
     
     let questionsCount = questions.count
     gameDelegate?.questionsForThisSession(total: questionsCount)
